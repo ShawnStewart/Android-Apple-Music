@@ -2,11 +2,12 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/rank"
         android:layout_width="wrap_content"
         android:layout_height="match_constraint"
         android:layout_marginStart="16dp"
@@ -20,7 +21,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/album"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -29,7 +30,7 @@
         tools:layout_editor_absoluteX="40dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,7 +39,7 @@
         android:layout_marginBottom="16dp"
         android:text="A Boogie wit da Hoodie"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/rank"
+        app:layout_constraintTop_toBottomOf="@+id/album"
         app:layout_constraintVertical_bias="1.0" />
 </android.support.constraint.ConstraintLayout>
