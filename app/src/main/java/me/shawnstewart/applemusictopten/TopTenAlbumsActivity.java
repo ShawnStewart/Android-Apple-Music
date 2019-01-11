@@ -36,9 +36,7 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_top_ten_albums);
 
         OkHttpClient client = new OkHttpClient();
-
         String url = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/10/explicit.json";
-
         Request request = new Request.Builder().url(url).build();
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -62,6 +60,12 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
 
                     try {
                         data = new JSONObject(response.body().string()).getJSONObject("feed").getJSONArray("results");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                initRecyclerView();
+                            }
+                        });
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -72,6 +76,7 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
         });
 
 //        initData();
+//        initRecyclerView();
     }
 
     // Placeholder Data
