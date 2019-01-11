@@ -14,7 +14,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="1"
+        android:text="@string/recycler_rank_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Hoodie SZN"
+        android:text="@string/recycler_album_default"
         app:layout_constraintStart_toEndOf="@+id/rank"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +39,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
-        android:text="A Boogie wit da Hoodie"
+        android:text="@string/recycler_artist_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/rank"
         app:layout_constraintTop_toBottomOf="@+id/album"
