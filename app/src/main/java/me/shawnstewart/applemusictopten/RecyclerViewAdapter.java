@@ -17,13 +17,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private static final String TAG = "RecyclerViewAdapter";
 
-    private ArrayList<String> mRanks = new ArrayList<>();
     private ArrayList<String> mAlbums = new ArrayList<>();
     private ArrayList<String> mArtists = new ArrayList<>();
     private Context context;
 
-    public RecyclerViewAdapter(Context context, ArrayList<String> mRanks, ArrayList<String> mAlbums, ArrayList<String> mArtists) {
-        this.mRanks = mRanks;
+    public RecyclerViewAdapter(Context context, ArrayList<String> mAlbums, ArrayList<String> mArtists) {
         this.mAlbums = mAlbums;
         this.mArtists = mArtists;
         this.context = context;
@@ -40,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         Log.d(TAG, "onBindViewHolder: called");
 
-        viewHolder.rank.setText(mRanks.get(i));
+        viewHolder.rank.setText(Integer.toString(i + 1));
         viewHolder.album.setText(mAlbums.get(i));
         viewHolder.artist.setText(mArtists.get(i));
 

@@ -13,7 +13,6 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
     private static final String TAG = "TopTenAlbumsActivity";
 
     // variables
-    private ArrayList<String> mRanks = new ArrayList<>();
     private ArrayList<String> mAlbums = new ArrayList<>();
     private ArrayList<String> mArtists = new ArrayList<>();
 
@@ -28,11 +27,9 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
     private void initData() {
         Log.d(TAG, "initData: preparing data");
 
-        mRanks.add("3");
         mAlbums.add("An Album");
         mArtists.add("An Artist");
 
-        mRanks.add("3");
         mAlbums.add("An Album");
         mArtists.add("An Artist");
 
@@ -42,7 +39,7 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
     private void initRecyclerView() {
         Log.d(TAG, "initRecyclerView: init recyclerview");
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mRanks, mAlbums, mArtists);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mAlbums, mArtists);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
