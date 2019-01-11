@@ -12,20 +12,23 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
 
-    private ArrayList<String> mAlbums = new ArrayList<>();
-    private ArrayList<String> mArtists = new ArrayList<>();
     private Context context;
+    private JSONArray mData = new JSONArray();
 
-    public RecyclerViewAdapter(Context context, ArrayList<String> mAlbums, ArrayList<String> mArtists) {
-        this.mAlbums = mAlbums;
-        this.mArtists = mArtists;
+    public RecyclerViewAdapter(Context context, JSONArray mData) {
         this.context = context;
+        this.mData = mData;
+        Log.d(TAG, "RecyclerViewAdapter: " + mData);
     }
 
     @NonNull
@@ -38,15 +41,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         Log.d(TAG, "onBindViewHolder: called");
+        JSONObject currentItem = null;
+        String currentAlbum = null;
+        String currentArtist = null;
+
+        try {
+            currentItem = mData.getJSONObject(i);
+            currentAlbum = currentItem.getString("name");
+            currentArtist = currentItem.getString("artistName");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         viewHolder.rank.setText(Integer.toString(i + 1));
-        viewHolder.album.setText(mAlbums.get(i));
-        viewHolder.artist.setText(mArtists.get(i));
+        viewHolder.album.setText(currentAlbum);
+        viewHolder.artist.setText(currentArtist);
 
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked on " + mAlbums.get(i));
+                Log.d(TAG, "onClick: clicked on ");
 
 //                Toast.makeText(context, mAlbums.get(i), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, AlbumDetailsActivity.class);
@@ -57,7 +71,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return mAlbums.size();
+        if (mData != null) {
+            return mData.length();
+        } else {
+            return 0;
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
