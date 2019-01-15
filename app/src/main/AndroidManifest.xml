@@ -27,10 +27,10 @@
         </activity>
         <activity
             android:name=".AlbumDetailsActivity"
-            android:parentActivityName=".TopTenAlbumsActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TopTenAlbumsActivity" />
+                android:value=".MainActivity" />
         </activity>
     </application>
 

@@ -1,6 +1,7 @@
 package me.shawnstewart.applemusictopten;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,8 +36,9 @@ public class TopTenAlbumsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_ten_albums);
 
+        Intent intent = getIntent();
         OkHttpClient client = new OkHttpClient();
-        String url = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/10/explicit.json";
+        String url = intent.getExtras().getString("REQUEST_STRING");
         Request request = new Request.Builder().url(url).build();
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
