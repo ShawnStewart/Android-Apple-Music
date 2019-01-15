@@ -89,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView rank, album, artist;
-        RelativeLayout parentLayout;
+        LinearLayout parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
