@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#FFFFFF">
 
     <Button
-        android:id="@+id/mainButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/comingSoon"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClickFetchTopTen"
-        android:text="@string/btn_main_submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:onClick="onClickMenuItem"
+        android:text="Coming Soon"
+        style="?android:attr/borderlessButtonStyle"
+        android:padding="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="textStart"
+        android:layout_gravity="center"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/hotTracks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickMenuItem"
+        android:text="Hot Right Now"
+        style="?android:attr/borderlessButtonStyle"
+        android:padding="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="textStart"
+        android:layout_gravity="center"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/topAlbums"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickMenuItem"
+        android:text="Top Albums"
+        style="?android:attr/borderlessButtonStyle"
+        android:padding="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="textStart"
+        android:layout_gravity="center"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/topSongs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickMenuItem"
+        android:text="Top Songs"
+        style="?android:attr/borderlessButtonStyle"
+        android:padding="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="textStart"
+        android:layout_gravity="center"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/newReleases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickMenuItem"
+        android:text="New Releases"
+        style="?android:attr/borderlessButtonStyle"
+        android:paddingLeft="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="textStart"
+        android:layout_gravity="center"
+        android:textSize="16dp"/>
+</LinearLayout>

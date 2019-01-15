@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClickFetchTopTen(View view) {
+    public void onClickMenuItem(View view) {
         Intent intent = new Intent(this, TopTenAlbumsActivity.class);
         startActivity(intent);
     }
